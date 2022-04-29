@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+	<!--------------------------- header section-->
+	<section id="header">
+		<div></div>
+		<div id="hello">
+			<p>Hello, my name is</p>
+		</div>
+		<div>
+			<p>Jade Danial,</p>
+			<div class="flex">
+				<p class="header-sub-title">I am a &nbsp;</p><p class="header-sub-title" id="word"></p><p class="blink">|</p>
+			</div>
+		</div>
+		<div>
+			<p>I'm currently living in Philippines. In my spare time I enjoy building my own projects. I primaly use Python, but picking up a new framework or language isn't a problem. I am comfortable developing on the frontend or backend.</p>
+		</div>
+		<div>
+			<a class="more-button" href="mailto:danialjade@gmail.com">Get In Touch With Me</a>
+		</div>
+	</section>
+	<!--------------------------- about section -->
+	<section id="about" class="container reveal">
+		<div class="pagetitle"><p>I'm A Nice Guy</p></div>
+		<div id="aboutmore">
+			{% block profile %}
+				{% for profile in profiles %}
+					{% if profile.user.username == "jadedanial" %}
+						<div id="aboutprofile" class="container reveal">
+							<div class="card-container">
+								<img class="round" src="{% static 'blog/media/user/' %}{{ profile.imagename }}" alt="{{ profile.user.first_name }}" id="profileimg">
+								<h3>{{ profile.user.first_name }} {{ profile.user.last_name }}</h3>
+								<h6>Philippines</h6>
+								<p>Programmer/Web Developer</p>
+								<div class="card-skills">
+									<h6>Skills</h6>
+									<ul>
+										{% for skill in profile.skill.all %}
+											<li><img src="{% static 'blog/media/skill/' %}{{ skill.imagename }}" alt="{{ skill.name }}" class="skillimg"></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div id="abouttext">
+								<p>{{ profile.bio|safe }}</p>
+								<br><br>
+								<div>
+									<a class="more-button" href="mailto:danialjade@gmail.com">Resume</a>
+								</div>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			{% endblock profile %}
+		</div>
+	</section>
+	<!--------------------------- project section -->
+	<section id="project" class="container reveal">
+		<div class="pagetitle"><p>What I’ve Built</p></div>
+		<div>
+			{% block project %}
+				{% for project in projects %}
+					<div class="projectscontent">
+						<div id="project-image" class="container reveal">
+							<a href="{% url 'project' category=1 pk=project.pk slug=project.slug %}"><img src="{% static 'blog/media/project/' %}{{ project.imagename }}" alt="Project Image" class="projectimg"></a>
+						</div>
+						<div id="project-description" class="container reveal">
+							<a href="{% url 'project' category=1 pk=project.pk slug=project.slug %}"><p>{{ project.title }}</p></a>
+							<p>{{ project.shortcontent }}</p>
+							<div class="skillsused">
+								<span>
+									{% for skill in project.skill.all %}
+										<img src="{% static 'blog/media/skill/' %}{{ skill.imagename }}" alt="{{ skill.name }}" class="skillusedimg">
+									{% endfor %}
+								</span>
+							</div>
+							<div>
+								<a class="more-button" href="{% url 'project' category=1 pk=project.pk slug=project.slug %}">Learn More >></a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			{% endblock project %}
+		</div>	
+	</section>
+	<!--------------------------- contact section -->
+	<section id="contact" class="container reveal">
+		<div class="pagetitle"><p>Get In Touch</p></div>
+		<div id="contact-message">
+			<p>I’m looking for more opportunities to work on, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
+			<div>
+				<a class="more-button" href="mailto:danialjade@gmail.com">Say Hi!</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			@font-face{
+				font-family: raleway;
+				src: url({% static 'blog/fonts/raleway.ttf' %});
+			}
+			@font-face{
+				font-family: ralewaymedium;
+				src: url({% static 'blog/fonts/ralewaymedium.ttf' %});
+			}
+			@font-face{
+				font-family: consola;
+				src: url({% static 'blog/fonts/consola.ttf' %});
+			}
+			@font-face{
+				font-family: calm;
+				src: url({% static 'blog/fonts/calm.ttf' %});
+			}
+			@font-face{
+				font-family: texgyreadventor;
+				src: url({% static 'blog/fonts/texgyreadventor.otf' %});
+			}
+		</style>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Jade Danial</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/prism.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/theme.css' %}">
+		<script type="text/javascript" src="{% static 'blog/js/prism.js' %}"></script>
+		<script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
+		<link rel="shortcut icon" type="image/png" href="{% static 'blog/images/icon.png' %}">
+	</head>
+	<body onload="reveal()">
+		<main>
+			<!--------------------------- home section -->
+			<section id="home">
+				<div id="navigation">
+					<div id="navlogo">
+						<a href="{% url 'home' %}"><img src="{% static 'blog/images/logo.png' %}" alt="Logo" id="navimg"></a>
+					</div>
+					<div>
+						<div id="dropdownmenu">
+							<img src="{% static 'blog/images/menu.png' %}" alt="Menu" id="menuimg" onclick="showMenu()">
+							<div id="menuitems" class="menucontent">
+								<a href="{% url 'home' %}#about">0. About</a>
+								<a href="{% url 'home' %}#project">1. Project</a>
+								<a href="{% url 'home' %}#contact">2. Contact</a>
+							</div>
+						</div>
+						<div id="menu">
+							<a href="{% url 'home' %}#about">0. About</a>
+							<a href="{% url 'home' %}#project">1. Project</a>
+							<a href="{% url 'home' %}#contact">2. Contact</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			{% block content %}
+			{% endblock %}
+			<!--------------------------- footer section -->
+			<div id="contactlist">
+				{% block social %}
+					{% for profile in profiles %}
+						{% if profile.user.username == "jadedanial" %}
+							{% for social in profile.social.all %}
+								<div class="socials">
+									<a href="{{ social.link }}" target="_blank">
+										<img src="{% static 'blog/media/social/' %}{{ social.imagename }}" alt="{{ social.name }}" class="socialimg">
+									</a>
+								</div>
+							{% endfor %}
+						{% endif %}
+					{% endfor %}
+				{% endblock social %}
+				<div class="line-in-middle"></div>
+			</div>
+			<div id="user-email-list">
+				<div id="user-email">
+					<a href="mailto:danialjade@gmail.com">danialjade@gmail.com</a>
+				</div>
+				<div class="line-in-middle"></div>
+			</div>
+			<div id="footer">
+				<p>Designed and Built by Jade Danial</p>
+			</div>
+		</main>
+		<script type="text/javascript">
+			loadFunctions();
+			reveal();
+		</script>
+	</body>
+</html>
