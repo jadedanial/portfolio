@@ -145,7 +145,7 @@ body{
 
 #header div:nth-child(3){
     font-family: calm;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     margin: 1rem 3rem 2rem 3rem;
 }
 
@@ -213,7 +213,7 @@ body{
 }
 
 #aboutprofile-post{
-    margin: 3rem 4rem 3rem 4rem;
+    margin: 3rem 2rem;
 }
 
 .card-container{
@@ -519,6 +519,10 @@ body{
 
     .socials{
         margin: 0 1.1rem;
+    }
+
+    #aboutprofile-post{
+        margin: 3rem 4rem;
     }
 
 }
