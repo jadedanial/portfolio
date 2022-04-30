@@ -353,7 +353,7 @@ body{
 }
 
 .postdetailpubinfo{
-    text-align: center;
+    text-align: left;
     margin: 0 2rem;
 }
 
@@ -441,7 +441,7 @@ body{
 }
 
 #postdetailtitle{
-    text-align: center;
+    text-align: left;
     margin: 8rem 2rem 0 2rem;
 }
 

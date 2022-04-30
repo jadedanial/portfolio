@@ -17,10 +17,6 @@
 					<p>{{ subject.dateposted|date:"m d, Y g:s A" }}</p>
 				</span>
 				<span>
-					<img src="{% static 'blog/images/feedback.png' %}" alt="Feedback" width="15rem">
-					<p>{{ approvedcounts }} feedback{{ approvedcounts|pluralize }}</p>
-				</span>
-				<span>
 					<img src="{% static 'blog/images/view.png' %}" alt="View" width="17rem">
 					{% if category == 1 %}
 						{% for view in views %}
