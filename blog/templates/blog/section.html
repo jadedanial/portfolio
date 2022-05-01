@@ -66,16 +66,17 @@
 							<a href="{% url 'project' category=1 pk=project.pk slug=project.slug %}"><img src="{% static 'blog/media/project/' %}{{ project.imagename }}" alt="Project Image" class="projectimg"></a>
 						</div>
 						<div id="project-description" class="container reveal">
-							<a href="{% url 'project' category=1 pk=project.pk slug=project.slug %}"><p>{{ project.title }}</p></a>
-							<p>{{ project.shortcontent }}</p>
-							<div class="skillsused">
+							<a href="{% url 'project' category=1 pk=project.pk slug=project.slug %}"><p id="project-title">{{ project.title }}</p></a>
+							<p id="project-shortcontent">{{ project.shortcontent }}</p>
+							<div id="skillsused">
 								<span>
 									{% for skill in project.skill.all %}
 										<img src="{% static 'blog/media/skill/' %}{{ skill.imagename }}" alt="{{ skill.name }}" class="skillusedimg">
 									{% endfor %}
 								</span>
 							</div>
-							<div>
+							<div id="project-links">
+								<a class="more-button" href="{{ project.repo }}" target="_blank">GitHub <img src="{% static 'blog/media/social/github.png' %}" style="width: 1rem;"></a>
 								<a class="more-button" href="{% url 'project' category=1 pk=project.pk slug=project.slug %}">Learn More >></a>
 							</div>
 						</div>

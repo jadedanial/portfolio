@@ -21,9 +21,9 @@ class ProfileAdmin(admin.ModelAdmin):
 
 class ProjectAdmin(admin.ModelAdmin):
 
-	list_display = ('title', 'dateposted', 'author', 'imagename', 'shortcontent', 'slug')
-	list_filter = ('title', 'dateposted', 'author', 'imagename', 'shortcontent', 'slug')
-	search_fields = ('title', 'dateposted', 'author', 'imagename', 'shortcontent', 'slug')
+	list_display = ('title', 'dateposted', 'author', 'imagename', 'shortcontent', 'slug', 'repo')
+	list_filter = ('title', 'dateposted', 'author', 'imagename', 'shortcontent', 'slug', 'repo')
+	search_fields = ('title', 'dateposted', 'author', 'imagename', 'shortcontent', 'slug', 'repo')
 
 class ProjectViewAdmin(admin.ModelAdmin):
 

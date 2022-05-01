@@ -1,4 +1,5 @@
 /* Mobiles upto 479 maximum width (portrait) ----------- */
+
 body{
     font-family: raleway;
     color: rgb(255,255,255);
@@ -14,14 +15,12 @@ body{
 #menuimg{
     width: 2rem;
     cursor: pointer;
-    padding: 1rem;
+    padding-top: 0.5rem;
 }
 
 .menucontent{
     height: 7rem;
     text-align: left;
-    padding: 0.3rem;
-    background-color: rgb(0,0,0);
     animation: movedown 0.5s;
     position: relative;
     left: 0;
@@ -38,8 +37,7 @@ body{
 .menucontent a{
     font-size: 1rem;
     text-decoration: none;
-    padding: 0.3rem 1rem;
-    color: rgb(255,255,255);
+    padding-top: 1rem;
     display: block;
 }
 
@@ -68,7 +66,8 @@ body{
 }
 
 #navigation{
-    background-color: rgb(0, 0, 0);
+    color: rgb(255,255,255);
+    background-color: rgb(18, 18, 18);
     left: 0;
     right: 0;
     top: 0;
@@ -77,22 +76,27 @@ body{
     display: grid;
     grid-template-columns: 20% 80%;
     transition: top 0.5s;
+    padding: 1rem 3rem;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+}
+
+#navigation div:nth-child(1){
+    text-align: left;
+    padding: 0;
 }
 
 #navigation div:nth-child(2){
     text-align: right;
-    padding: 0.6rem 0.3rem 0.3rem 0.3rem;
+    padding: 0;
 }
 
 #menu > a{
     font-family: consola;
     font-size: 1rem;
     text-decoration: none;
-    color: rgb(255,255,255);
-    background-color: rgb(0,0,0);
-    padding: 1rem;
     position: relative;
-    top: 15%;
+    padding-left: 2rem;
+    top: 25%;
 }
 
 #menu a:link{
@@ -111,13 +115,8 @@ body{
     color: rgb(69,170,242);
 }
 
-#navlogo{
-    text-align: left;
-    padding: 0.2rem 0.3rem 0.2rem 2rem;
-}
-
 #navimg{
-    width: 5rem;
+    width: 3rem;
 }
 
 #home{
@@ -159,7 +158,7 @@ body{
     margin: 4rem 0 3rem 3rem;
 }
 
-.more-button {
+.more-button{
     font-family: consola;
     font-size: 1rem;
     text-decoration: none;
@@ -176,7 +175,7 @@ body{
     color: rgb(0, 0, 0);
 }
 
-.blink {
+.blink{
     animation: blink 0.5s infinite;
 }
 
@@ -185,11 +184,11 @@ body{
 
 }
 
-.flex {
+.flex{
 	display: flex;
 }
 
-.header-sub-title {
+.header-sub-title{
     font-family: calm;
 
 }
@@ -324,28 +323,39 @@ body{
     color: rgb(255, 255, 255);
 }
 
-#project-description p{
-    background-color: rgb(20, 20, 20);
-    font-family: raleway;
-    font-size: 1.1rem;
-    padding: 1.5rem;
-    border-radius: 5px;
-}
-
-#project-description p:nth-child(1){
+#project-title{
     background-color: rgba(0, 0, 0, 0);
     font-family: calm;
     font-size: 1.3rem;
     box-shadow: 0px 0px rgba(0, 0, 0, 0);
+    padding: 1rem 1.5rem;
 }
 
-#project-description div:nth-child(4){
-    margin: 2rem 0 0 0;
+#project-shortcontent{
+    background-color: rgb(20, 20, 20);
+    font-family: raleway;
+    font-size: 1.1rem;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+}
+
+#skillsused{
+    padding: 0.5rem 1.5rem;
+}
+
+#project-links{
+    padding: 2rem 1.5rem;
+}
+
+#project-links >a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .skillusedimg{
     width: 1.5rem;
-    margin: 0 1rem 0 0;
+    margin: 0 0 0 1rem;
 }
 
 #postdetail{
@@ -561,7 +571,7 @@ body{
 
     #contactlist{
         position: fixed;
-        left: 1%;
+        left: 3%;
         bottom: 0%;
     }
 
@@ -594,7 +604,7 @@ body{
     #user-email-list{
         display: block;
         position: fixed;
-        right: 3%;
+        right: 5%;
         bottom: 0%;
     }
 
@@ -684,8 +694,20 @@ body{
         margin: 0 10rem 0 0;
     }
 
-    #project-description p{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    #project-title{
+        padding: 1rem 0;
+    }
+
+    #project-shortcontent{
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.80);
+    }
+
+    #skillsused{
+        padding: 0.5rem 0;
+    }
+
+    #project-links{
+        padding: 2rem 0;
     }
 
     .projectimg{
@@ -717,10 +739,6 @@ body{
 
 /* Notebooks 1024 minimum width and 681 minimum height upto 1365 maximum height ----------- */
 @media only screen and (min-width : 1024px) and (min-height : 681px) and (max-height : 1365px){
-
-    #dropdownmenu{
-        display: none;
-    }
 
     #menu{
         display: inline;

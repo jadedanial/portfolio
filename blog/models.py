@@ -45,6 +45,7 @@ class Project(models.Model):
 	shortcontent = models.TextField(max_length=300)
 	longcontent = RichTextUploadingField()
 	slug = models.SlugField(unique=True, blank=True)
+	repo = models.TextField(max_length=300)
 
 	def save(self, *args, **kwargs):
 
