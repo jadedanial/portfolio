@@ -45,7 +45,7 @@ Follow the steps below to get started with this project's development environmen
 1. Install Django framework using pip3
    - pip3 install django==4.0.3
 
-2. Using command, navigate to the project directory and run:
+2. Navigate to the project directory and run:
    - python manage.py runserver
 
 
