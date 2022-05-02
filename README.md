@@ -32,7 +32,7 @@ A section that shows my different social media accounts to make it easy for my w
 
 
 
-# Screenshots
+# Screenshot
 
 ![This is an image](http://jadedanialportfolio.herokuapp.com/static/blog/media/project/portfolio.png)
 
@@ -42,7 +42,7 @@ A section that shows my different social media accounts to make it easy for my w
 
 Follow the steps below to get started with this project's development environment.
 
-1. Install Django framework using pip3.
+1. Install Django framework using pip3
    - pip3 install django==4.0.3
 
 2. Using command, navigate to the project directory and run:
