@@ -298,7 +298,7 @@ body{
 .projectscontent{
     display: grid;
     grid-template-columns: 100%;
-    margin: 3rem 0;
+    margin: 5rem 0;
 }
 
 #project-image{
@@ -314,6 +314,7 @@ body{
     background-color: rgb(20, 20, 20);
     position: relative;
     text-align: right;
+    padding-top: 2rem;
     margin: 0 3rem;
     border-radius: 5px;
 }
