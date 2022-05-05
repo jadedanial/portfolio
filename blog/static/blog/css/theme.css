@@ -175,19 +175,6 @@ body{
     color: rgb(0, 0, 0);
 }
 
-.github-button-image{
-    position: relative;
-    display: inline-block;
-}
-.github-button-image .github-black-image{
-    display: none;
-    position: absolute;
-}
-
-.github-button-image:hover .github-black-image{
-    display: inline;
-}
-
 .blink{
     animation: blink 0.5s infinite;
 }
