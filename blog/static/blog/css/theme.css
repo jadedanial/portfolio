@@ -175,6 +175,19 @@ body{
     color: rgb(0, 0, 0);
 }
 
+.github-button-image{
+    position: relative;
+    display: inline-block;
+}
+.github-button-image .github-black-image{
+    display: none;
+    position: absolute;
+}
+
+.github-button-image:hover .github-black-image{
+    display: inline;
+}
+
 .blink{
     animation: blink 0.5s infinite;
 }
@@ -246,7 +259,7 @@ body{
 }
 
 .card-skills{
-	background-color: rgb(10, 10, 10);
+	background-color: rgb(15, 15, 15);
 	text-align: center;
 	padding: 15px;
 	margin-top: 0;
