@@ -151,7 +151,7 @@ body{
 #header div:nth-child(4){
     font-family: raleway;
     font-size: 1.2rem;
-    margin: 0 3rem;
+    margin: 0 8rem 0 3rem;
 }
 
 #header div:nth-child(5){
@@ -514,7 +514,7 @@ body{
     }
     
     #header div:nth-child(4){
-        margin: 0 20rem 0 10rem;
+        margin: 0 35rem 0 10rem;
     }
 
     #header div:nth-child(5){
@@ -602,7 +602,7 @@ body{
     }
 
     #contact-message{
-        margin: 0 15rem 10rem 15rem;
+        margin: 0 20rem 10rem 20rem;
     }
 
     .socials{
