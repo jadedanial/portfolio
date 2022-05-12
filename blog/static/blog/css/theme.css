@@ -423,7 +423,7 @@ body{
 
 #contact-message{
     text-align: center;
-    margin: 0 4rem 10rem 4rem;
+    margin: 0 4rem 15rem 4rem;
 }
 
 #contact-message div{
@@ -602,7 +602,7 @@ body{
     }
 
     #contact-message{
-        margin: 0 20rem 10rem 20rem;
+        margin: 0 20rem 15rem 20rem;
     }
 
     .socials{
