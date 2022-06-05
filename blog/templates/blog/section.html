@@ -3,23 +3,27 @@
 {% block content %}
 	<!--------------------------- header section-->
 	<section id="header">
-		<div></div>
-		<div id="hello">
-			<br>
-			<br>
-			<p>Hello, my name is</p>
-		</div>
 		<div>
-			<p style="font-size: 3rem;">Jade Danial</p>
-			<div class="flex">
-				<p class="header-sub-title">I am a &nbsp;</p><p class="header-sub-title" id="word"></p><p class="blink">|</p>
+			<div id="hello">
+				<br>
+				<br>
+				<p>Hello, my name is</p>
+			</div>
+			<div id="nametag">
+				<p style="font-size: 3rem;">Jade Danial</p>
+				<div class="flex">
+					<p class="header-sub-title">I am a &nbsp;</p><p class="header-sub-title" id="word"></p><p class="blink">|</p>
+				</div>
+			</div>
+			<div id="motto">
+				<p>I am passionate about leveraging my diverse backgrounds to decipher challenging problems and create delightful experiences. I honed my skills at programming and web development.</p>
+			</div>
+			<div id="header-button">
+				<a class="more-button" href="mailto:danialjade@gmail.com">Get In Touch With Me</a>
 			</div>
 		</div>
-		<div>
-			<p>I am passionate about leveraging my diverse backgrounds to decipher challenging problems and create delightful experiences. I honed my skills at programming and web development.</p>
-		</div>
-		<div>
-			<a class="more-button" href="mailto:danialjade@gmail.com">Get In Touch With Me</a>
+		<div id="big-img">
+			<img src="{% static 'blog/media/user/me.png' %}" id="me-img">
 		</div>
 	</section>
 	<!--------------------------- about section -->
