@@ -416,10 +416,39 @@ body{
     margin-top: 20rem;
 }
 
-#contactlist{
+#contact-list{
+    left: 3%;
+}
+
+#email-list{
+    right: 3%;
+}
+
+#contact-list, #email-list{
     text-align: center;
-    padding: 1rem 0 0 0;
     position: relative;
+}
+
+#user-email{
+    display: block;
+    width: 1.2rem;
+    padding: 1rem 0;
+}
+
+#user-email a{
+    font-family: consola;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    writing-mode: vertical-rl;
+    text-align: center;
+    text-orientation: mixed;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+#user-email a:hover{
+    opacity: 1;
 }
 
 #contact-message{
@@ -438,7 +467,6 @@ body{
 }
 
 .socials{
-    text-align: right;
     margin: 0 0.5rem;
     display: inline-block;
 }
@@ -448,7 +476,7 @@ body{
     cursor: pointer;
 }
 
-#user-email-list{
+#email-list{
     display: none;
 }
 
@@ -606,12 +634,6 @@ body{
         margin: 0 3rem;
     }
 
-    #contactlist{
-        position: fixed;
-        left: 3%;
-        bottom: 0%;
-    }
-
     #contact-message{
         margin: 0 20rem 15rem 20rem;
     }
@@ -631,38 +653,20 @@ body{
     }
 
     .line-in-middle{
-        left: 50%;
         width:1px;
         height:100px;
         background-color: rgb(255, 255, 255);
         position: relative;
     }
 
-    #user-email-list{
-        display: block;
+    #contact-list, #email-list{
+        display: flex;
         position: fixed;
-        right: 3%;
         bottom: 0%;
-    }
-
-    #user-email{
-        display: block;
-        padding: 1rem 0;
-    }
-
-    #user-email a{
-        font-family: consola;
-        font-size: 1.1rem;
-        color: rgb(255, 255, 255);
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        text-decoration: none;
-        opacity: 0.5;
-        transition: 0.3s;
-    }
-
-    #user-email a:hover{
-        opacity: 1;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
     }
 
 }
