@@ -124,19 +124,19 @@ body{
 }
 
 #header{
-    display: grid;
-    grid-template-columns: 100% 0%;
+    height: 100vh;
+    background: none;
 }
 
 #header p{
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     margin: 0;
 }
 
 #hello{
     font-family: consola;
     font-size: 1.2rem;
-    margin-top: 7rem;
+    padding-top: 8rem;
     margin-left: 3rem;
 }
 
@@ -150,20 +150,16 @@ body{
     font-family: raleway;
     font-size: 1.2rem;
     margin: 0 5rem 0 3rem;
+    width: 70%;
 }
 
 #header-button{
     margin: 4rem 0 3rem 3rem;
 }
 
-#big-img{
-    display: none;
-}
-
 #me-img{
     width: 100%;
-    filter: grayscale(50%);
-    -webkit-filter: grayscale(50%);
+    filter: grayscale(100%);
 }
 
 .more-button{
@@ -211,7 +207,7 @@ body{
 #about{
     height: auto;
     padding-top: 1.5rem;
-    margin-top: 15rem;
+    margin-top: 8rem;
 }
 
 #aboutprofile{
@@ -293,7 +289,7 @@ body{
 #project{
     height: auto;
     padding-top: 1.5rem;
-    margin-top: 15rem;
+    margin-top: 12rem;
 }
 
 .projectscontent{
@@ -534,11 +530,13 @@ body{
     }
 
     #header{
-        display: grid;
-        grid-template-columns: 50% 50%;
+        background: url("/static/blog/media/user/me.png");
+        background-repeat: no-repeat;
+        background-position: right 8rem top 5rem;
     }
 
     #hello{
+        padding-top: 10rem;
         margin-left: 10rem;
     }
 
@@ -548,16 +546,12 @@ body{
     }
 
     #motto{
+        width: 40%;
         margin: 2rem 0 3rem 10rem;
     }
     
     #header-button{
         margin: 0 0 0 10rem;
-    }
-
-    #big-img{
-        display: block;
-        padding: 5rem 7rem 0 0;
     }
 
     .pagetitle p, #postdetailtitle p{
