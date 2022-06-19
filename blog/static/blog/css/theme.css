@@ -207,7 +207,7 @@ body{
 #about{
     height: auto;
     padding-top: 1.5rem;
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 
 #aboutprofile{
@@ -560,6 +560,10 @@ body{
 
     #postdetailtitle{
         margin: 8rem 8rem 0 8rem;
+    }
+
+    #about{
+        margin-top: 6rem;
     }
 
     #aboutprofile{
