@@ -34,7 +34,7 @@ A section that shows my different social media accounts to make it easy for my w
 
 # Screenshot
 
-![This is an image](http://jadedanialportfolio.herokuapp.com/static/blog/media/project/portfolio.png)
+![This is an image](https://github.com/jadedanial/portfolio/blob/main/ui1.png)
 
 
 
