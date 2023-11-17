@@ -1,670 +1,675 @@
 /* Mobiles and Tablets upto 999 maximum width ----------------------------------------------- */
 
-body{
-    font-family: raleway;
-    color: rgb(255,255,255);
-    background-color: rgb(10, 10, 10);
-    padding: 0;
-    margin: 0;
+body {
+  font-family: raleway;
+  color: rgb(255, 255, 255);
+  background-color: rgb(10, 10, 10);
+  padding: 0;
+  margin: 0;
 }
 
-#dropdownmenu{
-    display: inline;
+#dropdownmenu {
+  display: inline;
 }
 
-#menuimg{
-    width: 2rem;
-    cursor: pointer;
-    padding-top: 0.5rem;
+#menuimg {
+  width: 2rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
 }
 
-.menucontent{
+.menucontent {
+  height: 7rem;
+  text-align: left;
+  animation: movedown 0.5s;
+  position: relative;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  display: none;
+}
+
+@keyframes movedown {
+  from {
+    height: 0;
+  }
+  to {
     height: 7rem;
-    text-align: left;
-    animation: movedown 0.5s;
-    position: relative;
-    left: 0;
-    overflow: hidden;
-    z-index: 1;
-    display: none;
+  }
 }
 
-@keyframes movedown{
-    from { height: 0; }
-    to   { height: 7rem; }
+.menucontent a {
+  font-size: 1rem;
+  text-decoration: none;
+  padding-top: 1rem;
+  display: block;
 }
 
-.menucontent a{
-    font-size: 1rem;
-    text-decoration: none;
-    padding-top: 1rem;
-    display: block;
+.menucontent a:link {
+  color: rgb(255, 255, 255);
 }
 
-.menucontent a:link{
-    color: rgb(255,255,255);
+.menucontent a:visited {
+  color: rgb(255, 255, 255);
 }
 
-.menucontent a:visited{
-    color: rgb(255,255,255);
+.menucontent a:hover {
+  color: rgb(69, 170, 242);
 }
 
-.menucontent a:hover{
-    color: rgb(69,170,242);
+.menucontent a:active {
+  color: rgb(69, 170, 242);
 }
 
-.menucontent a:active{
-    color: rgb(69,170,242);
+.showmenu {
+  display: block;
 }
 
-.showmenu{
-    display: block;
+#menu {
+  display: none;
 }
 
-#menu{
-    display: none;
+#navigation {
+  color: rgb(255, 255, 255);
+  background-color: rgb(15, 15, 15);
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  transition: top 0.5s;
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
 }
 
-#navigation{
-    color: rgb(255,255,255);
-    background-color: rgb(15, 15, 15);
-    left: 0;
-    right: 0;
-    top: 0;
-    position: fixed;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 20% 80%;
-    transition: top 0.5s;
-    padding: 1rem 1.5rem;
-    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+#navigation div:nth-child(1) {
+  text-align: left;
+  padding: 0;
 }
 
-#navigation div:nth-child(1){
-    text-align: left;
-    padding: 0;
+#navigation div:nth-child(2) {
+  text-align: right;
+  padding: 0;
 }
 
-#navigation div:nth-child(2){
-    text-align: right;
-    padding: 0;
+#menu > a {
+  font-family: consola;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  padding-left: 2rem;
+  top: 25%;
 }
 
-#menu > a{
-    font-family: consola;
-    font-size: 1rem;
-    text-decoration: none;
-    position: relative;
-    padding-left: 2rem;
-    top: 25%;
+#menu a:link {
+  color: rgb(255, 255, 255);
 }
 
-#menu a:link{
-    color: rgb(255,255,255);
+#menu a:visited {
+  color: rgb(255, 255, 255);
 }
 
-#menu a:visited{
-    color: rgb(255,255,255);
+#menu a:hover {
+  color: rgb(69, 170, 242);
 }
 
-#menu a:hover{
-    color: rgb(69,170,242);
+#menu a:active {
+  color: rgb(69, 170, 242);
 }
 
-#menu a:active{
-    color: rgb(69,170,242);
+#navimg {
+  width: 3rem;
 }
 
-#navimg{
-    width: 3rem;
+#home {
+  height: auto;
 }
 
-#home{
-    height: auto;
+#header {
+  height: 100vh;
+  background: none;
 }
 
-#header{
-    height: 100vh;
-    background: none;
+#header p {
+  color: rgb(255, 255, 255);
+  margin: 0;
 }
 
-#header p{
-    color: rgb(255, 255, 255);
-    margin: 0;
+#hello {
+  font-family: consola;
+  font-size: 1.2rem;
+  padding-top: 8rem;
+  margin-left: 3rem;
 }
 
-#hello{
-    font-family: consola;
-    font-size: 1.2rem;
-    padding-top: 8rem;
-    margin-left: 3rem;
+#nametag {
+  font-family: calm;
+  font-size: 1.3rem;
+  margin: 1rem 3rem 2rem 3rem;
 }
 
-#nametag{
-    font-family: calm;
-    font-size: 1.3rem;
-    margin: 1rem 3rem 2rem 3rem;
+#motto {
+  font-family: raleway;
+  font-size: 1.2rem;
+  margin: 0 5rem 0 3rem;
+  width: 70%;
 }
 
-#motto{
-    font-family: raleway;
-    font-size: 1.2rem;
-    margin: 0 5rem 0 3rem;
-    width: 70%;
+#header-button {
+  margin: 4rem 0 3rem 3rem;
 }
 
-#header-button{
-    margin: 4rem 0 3rem 3rem;
+#me-img {
+  width: 100%;
+  filter: grayscale(100%);
 }
 
-#me-img{
-    width: 100%;
-    filter: grayscale(100%);
+.more-button {
+  font-family: consola;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: rgb(10, 10, 10);
+  color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.more-button{
-    font-family: consola;
-    font-size: 1rem;
-    text-decoration: none;
-    background-color: rgb(10, 10, 10);
-    color: rgb(255, 255, 255);
-    padding: 0.5rem;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 5px;
-    transition: 0.3s;
+.more-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
-.more-button:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+.blink {
+  animation: blink 0.5s infinite;
 }
 
-.blink{
-    animation: blink 0.5s infinite;
-}
-
-@keyframes blink{
-    to { opacity: .0; }
-
-}
-
-.flex{
-	display: flex;
-}
-
-.header-sub-title{
-    font-family: calm;
-
-}
-
-.pagetitle p{
-    font-family: texgyreadventor;
-    font-size: 2.2rem;
-    text-align: center;
-    color: rgb(255, 255, 255);
-}
-
-#about{
-    height: auto;
-    padding-top: 1.5rem;
-    margin-top: 4rem;
-}
-
-#aboutprofile{
-    display: grid;
-    margin: 3rem 3rem 0 3rem;
-}
-
-#aboutprofile-post{
-    margin: 0 3rem;
-}
-
-.card-container{
-	background-color: rgb(20, 20, 20);
-	border-radius: 5px;
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
-	color: rgb(255, 255, 255);
-	padding-top: 30px;
-	width: 100%;
-	text-align: center;
-}
-
-.card-container h3{
-	margin: 10px 0;
-}
-
-.card-container h6{
-	margin: 5px 0;
-	text-transform: uppercase;
-}
-
-.card-container p{
-	font-size: 14px;
-	line-height: 21px;
-}
-
-.card-container .round{
-	border: 1px solid rgb(255, 255, 255);
-	border-radius: 50%;
-	padding: 7px;
-}
-
-.card-skills{
-	background-color: rgb(15, 15, 15);
-	text-align: center;
-	padding: 15px;
-	margin-top: 0;
-}
-
-.card-skills ul{
-	list-style-type: none;
-    padding: 0;
-}
-
-.card-skills ul li{
-	border: 1px solid rgba(255, 255, 255, 0);
-	border-radius: 2px;
-	display: inline-block;
-	margin: 2px;
-	padding: 2px;
-}
-
-#profileimg{
-    width: 10rem;
-}
-
-#abouttext{
-    text-align: left;
-    background-color: rgb(10, 10, 10);
-}
-
-#abouttext p:nth-child(1){
-    font-size: 1.1rem;
-}
-
-.skillimg{
-    width: 1.5rem;
-}
-
-#project{
-    height: auto;
-    padding-top: 1.5rem;
-    margin-top: 12rem;
-}
-
-.projectscontent{
-    display: grid;
-    grid-template-columns: 100%;
-    margin: 3rem 0;
-}
-
-#project-image{
-    display: none;
-}
-
-.projectimg{
-    max-width: 100%;
+@keyframes blink {
+  to {
     opacity: 0;
+  }
 }
 
-#project-description{
-    background-color: rgb(20, 20, 20);
-    position: relative;
-    text-align: right;
-    padding-top: 2rem;
-    margin: 0 3rem;
-    border-radius: 5px;
+.flex {
+  display: flex;
 }
 
-#project-description a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+.header-sub-title {
+  font-family: calm;
 }
 
-#project-title{
-    background-color: rgba(0, 0, 0, 0);
-    font-family: calm;
-    font-size: 1.3rem;
-    box-shadow: 0px 0px rgba(0, 0, 0, 0);
-    padding: 1rem 1.5rem;
+.pagetitle p {
+  font-family: texgyreadventor;
+  font-size: 2.2rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
 }
 
-#project-shortcontent{
-    background-color: rgb(20, 20, 20);
-    font-family: raleway;
-    font-size: 1.1rem;
-    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0);
-    border-radius: 5px;
-    padding: 1rem 1.5rem;
+#about {
+  height: auto;
+  padding-top: 1.5rem;
+  margin-top: 4rem;
 }
 
-#skillsused{
-    padding: 0.5rem 1.5rem;
+#aboutprofile {
+  display: grid;
+  margin: 3rem 3rem 0 3rem;
 }
 
-#project-links{
-    padding: 2rem 1.5rem;
+#aboutprofile-post {
+  margin: 0 3rem;
 }
 
-#project-links >a:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+.card-container {
+  background-color: rgb(20, 20, 20);
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding-top: 30px;
+  width: 100%;
+  text-align: center;
 }
 
-.skillusedimg{
-    width: 1.5rem;
-    margin: 0 0 0 1rem;
+.card-container h3 {
+  margin: 10px 0;
 }
 
-#postdetail{
-    margin: 0 0 15rem 0;
+.card-container h6 {
+  margin: 5px 0;
+  text-transform: uppercase;
 }
 
-.postdetailpubinfo{
-    text-align: left;
-    margin: 0 3rem;
+.card-container p {
+  font-size: 14px;
+  line-height: 21px;
 }
 
-.postdetailpubinfo span{
-    margin: 0.1rem 0.5rem;
-    display: inline-block;
+.card-container .round {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 7px;
 }
 
-.postdetailpubinfo span p{
-    font-size: 0.8rem;
-    margin: 0;
-    display: inline-block;
+.card-skills {
+  background-color: rgb(15, 15, 15);
+  text-align: center;
+  padding: 15px;
+  margin-top: 0;
 }
 
-#postdetailcontent p{
-    font-size: 1.2rem;
-    margin: 0 3rem;
+.card-skills ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-#postdetaillist{
-    text-align: left;
-    margin: 0 3rem 2rem 3rem;
+.card-skills ul li {
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 2px;
+  display: inline-block;
+  margin: 2px;
+  padding: 2px;
 }
 
-#postdetaillist p{
-    font-family: texgyreadventor;
-    font-size: 2.5rem;
-    margin: 0.5rem 0;
+#profileimg {
+  width: 10rem;
 }
 
-#postdetaillist a{
-    font-family: ralewaymedium;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: rgb(255,255,255);
-    padding: 0.2rem 1rem 0.2rem 0;
-    margin: 0;
-    display: inline-block;
-    cursor: default;
+#abouttext {
+  text-align: left;
+  background-color: rgb(10, 10, 10);
 }
 
-#postdetaillist span{
-    cursor: pointer;
+#abouttext p:nth-child(1) {
+  font-size: 1.1rem;
 }
 
-#contact{
-    height: auto;
-    margin-top: 20rem;
+.skillimg {
+  width: 1.5rem;
 }
 
-#contact-list{
-    left: 3%;
+#project {
+  height: auto;
+  padding-top: 1.5rem;
+  margin-top: 12rem;
 }
 
-#email-list{
-    right: 3%;
+.projectscontent {
+  display: grid;
+  grid-template-columns: 100%;
+  margin: 3rem 0;
 }
 
-#contact-list, #email-list{
-    text-align: center;
-    position: relative;
+#project-image {
+  display: none;
 }
 
-#user-email{
-    display: block;
-    width: 1.2rem;
-    padding: 1rem 0;
+.projectimg {
+  max-width: 100%;
+  opacity: 0;
 }
 
-#user-email a{
-    font-family: consola;
-    font-size: 1.1rem;
-    color: rgb(255, 255, 255);
-    writing-mode: vertical-rl;
-    text-align: center;
-    text-orientation: mixed;
-    text-decoration: none;
-    opacity: 0.5;
-    transition: 0.3s;
+#project-description {
+  background-color: rgb(20, 20, 20);
+  position: relative;
+  text-align: right;
+  padding-top: 2rem;
+  margin: 0 3rem;
+  border-radius: 5px;
 }
 
-#user-email a:hover{
-    opacity: 1;
+#project-description a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
-#contact-message{
-    text-align: center;
-    margin: 0 4rem 15rem 4rem;
+#project-title {
+  background-color: rgba(0, 0, 0, 0);
+  font-family: calm;
+  font-size: 1.3rem;
+  box-shadow: 0px 0px rgba(0, 0, 0, 0);
+  padding: 1rem 1.5rem;
 }
 
-#contact-message div{
-    margin: 3rem 0 4rem 0;
+#project-shortcontent {
+  background-color: rgb(20, 20, 20);
+  font-family: raleway;
+  font-size: 1.1rem;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
 }
 
-#contact-message p{
-    font-family: ralewaymedium;
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
+#skillsused {
+  padding: 0.5rem 1.5rem;
 }
 
-.socials{
-    margin: 0 0.5rem;
-    display: inline-block;
+#project-links {
+  padding: 2rem 1.5rem;
 }
 
-.socialimg{
-    width: 1.5rem;
-    cursor: pointer;
+#project-links > a:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
-#email-list{
-    display: none;
+.skillusedimg {
+  width: 1.5rem;
+  margin: 0 0 0 1rem;
 }
 
-#postdetailtitle{
-    text-align: left;
-    margin: 8rem 3rem 0 3rem;
+#postdetail {
+  margin: 0 0 15rem 0;
 }
 
-#postdetailtitle p{
-    font-family: texgyreadventor;
-    font-size: 2rem;
-    margin: 0;
+.postdetailpubinfo {
+  text-align: left;
+  margin: 0 3rem;
 }
 
-#postdetailbody{
-    text-align: left;
-    margin: 1rem 0 5rem 0;
+.postdetailpubinfo span {
+  margin: 0.1rem 0.5rem;
+  display: inline-block;
 }
 
-#postdetailcontents{
-    margin: 3rem 0 2rem 0;
-    display: grid;
-    grid-template-columns: 100%;
+.postdetailpubinfo span p {
+  font-size: 0.8rem;
+  margin: 0;
+  display: inline-block;
 }
 
-#footer{
-    font-family: consola;
-    font-size: 1rem;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    margin-bottom: 2rem;
+#postdetailcontent p {
+  font-size: 1.2rem;
+  margin: 0 3rem;
 }
 
-.reveal{
-    position: relative;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: 1s all ease;
+#postdetaillist {
+  text-align: left;
+  margin: 0 3rem 2rem 3rem;
 }
-  
-.reveal.active{
-    transform: translateY(0);
-    opacity: 1;
+
+#postdetaillist p {
+  font-family: texgyreadventor;
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+#postdetaillist a {
+  font-family: ralewaymedium;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 0.2rem 1rem 0.2rem 0;
+  margin: 0;
+  display: inline-block;
+  cursor: default;
+}
+
+#postdetaillist span {
+  cursor: pointer;
+}
+
+#contact {
+  height: auto;
+  margin-top: 20rem;
+}
+
+#contact-list {
+  left: 3%;
+}
+
+#email-list {
+  right: 3%;
+}
+
+#contact-list,
+#email-list {
+  text-align: center;
+  position: relative;
+}
+
+#user-email {
+  display: block;
+  width: 1.2rem;
+  padding: 1rem 0;
+}
+
+#user-email a {
+  font-family: consola;
+  font-size: 1.1rem;
+  color: rgb(255, 255, 255);
+  writing-mode: vertical-rl;
+  text-align: center;
+  text-orientation: mixed;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+#user-email a:hover {
+  opacity: 1;
+}
+
+#contact-message {
+  text-align: center;
+  margin: 0 4rem 15rem 4rem;
+}
+
+#contact-message div {
+  margin: 3rem 0 4rem 0;
+}
+
+#contact-message p {
+  font-family: ralewaymedium;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.socials {
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.socialimg {
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+#email-list {
+  display: none;
+}
+
+#postdetailtitle {
+  text-align: left;
+  margin: 8rem 3rem 0 3rem;
+}
+
+#postdetailtitle p {
+  font-family: texgyreadventor;
+  font-size: 2rem;
+  margin: 0;
+}
+
+#postdetailbody {
+  text-align: left;
+  margin: 1rem 0 5rem 0;
+}
+
+#postdetailcontents {
+  margin: 3rem 0 2rem 0;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+#footer {
+  font-family: consola;
+  font-size: 1rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-bottom: 2rem;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* Notebooks and Desktops upto 1000 minimum width ----------------------------------------------- */
-@media only screen and (min-width : 1000px){
+@media only screen and (min-width: 1000px) {
+  #dropdownmenu {
+    display: none;
+  }
 
-    #dropdownmenu{
-        display: none;
-    }
+  #menu {
+    display: inline;
+  }
 
-    #menu{
-        display: inline;
-    }
+  #header {
+    background: url("/static/blog/media/user/me.png");
+    background-repeat: no-repeat;
+    background-position: right 8rem top 5rem;
+  }
 
-    #header{
-        background: url("/static/blog/media/user/me.png");
-        background-repeat: no-repeat;
-        background-position: right 8rem top 5rem;
-    }
+  #hello {
+    padding-top: 10rem;
+    margin-left: 10rem;
+  }
 
-    #hello{
-        padding-top: 10rem;
-        margin-left: 10rem;
-    }
+  #nametag {
+    font-size: 2.5rem;
+    margin: 1rem 0rem 2rem 10rem;
+  }
 
-    #nametag{
-        font-size: 2.5rem;
-        margin: 1rem 0rem 2rem 10rem;
-    }
+  #motto {
+    width: 40%;
+    margin: 2rem 0 3rem 10rem;
+  }
 
-    #motto{
-        width: 40%;
-        margin: 2rem 0 3rem 10rem;
-    }
-    
-    #header-button{
-        margin: 0 0 0 10rem;
-    }
+  #header-button {
+    margin: 0 0 0 10rem;
+  }
 
-    .pagetitle p, #postdetailtitle p{
-        font-size: 2.5rem;
-    }
+  .pagetitle p,
+  #postdetailtitle p {
+    font-size: 2.5rem;
+  }
 
-    #postdetailtitle{
-        margin: 8rem 8rem 0 8rem;
-    }
+  #postdetailtitle {
+    margin: 8rem 8rem 0 8rem;
+  }
 
-    #about{
-        margin-top: 6rem;
-    }
+  #about {
+    margin-top: 6rem;
+  }
 
-    #aboutprofile{
-        grid-template-columns: 40% 60%;
-        margin: 3rem 0 0 10rem;
-    }
+  #aboutprofile {
+    grid-template-columns: 40% 60%;
+    margin: 3rem 0 0 10rem;
+  }
 
-    #abouttext{
-        margin: 0 10rem 0 2rem;
-    }
+  #abouttext {
+    margin: 0 10rem 0 2rem;
+  }
 
-    .projectscontent{
-        grid-template-columns: 50% 50%;
-    }
+  .projectscontent {
+    grid-template-columns: 50% 50%;
+  }
 
-    #project-image{
-        display: block;
-        margin: 0 0 0 10rem;
-        width: 100%;
-    }
+  #project-image {
+    display: block;
+    margin: 0 0 0 10rem;
+    width: 100%;
+  }
 
-    #project-description{
-        background-color: rgba(20, 20, 20, 0);
-        margin: 1rem 10rem 0 0;
-    }
+  #project-description {
+    background-color: rgba(20, 20, 20, 0);
+    margin: 1rem 10rem 0 0;
+  }
 
-    #project-title{
-        padding: 1rem 0;
-    }
+  #project-title {
+    padding: 1rem 0;
+  }
 
-    #project-shortcontent{
-        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.80);
-    }
+  #project-shortcontent {
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.8);
+  }
 
-    #skillsused{
-        padding: 0.5rem 0;
-    }
+  #skillsused {
+    padding: 0.5rem 0;
+  }
 
-    #project-links{
-        padding: 2rem 0;
-    }
+  #project-links {
+    padding: 2rem 0;
+  }
 
-    .projectimg{
-        opacity: 1;
-    }
+  .projectimg {
+    opacity: 1;
+  }
 
-    .postdetailpubinfo{
-        margin: 0 8rem;
-    }
+  .postdetailpubinfo {
+    margin: 0 8rem;
+  }
 
-    #postdetaillist{
-        margin: 0 4rem 4rem 3rem;
-    }
+  #postdetaillist {
+    margin: 0 4rem 4rem 3rem;
+  }
 
-    #postdetaillist a{
-        padding: 0.3rem 0;
-        display: block;
-    }
+  #postdetaillist a {
+    padding: 0.3rem 0;
+    display: block;
+  }
 
-    #postdetailcontents{
-        margin: 3rem 5rem 2rem 5rem;
-        grid-template-columns: 70% 30%;
-    }
+  #postdetailcontents {
+    margin: 3rem 5rem 2rem 5rem;
+    grid-template-columns: 70% 30%;
+  }
 
-    #aboutprofile-post{
-        margin: 0 3rem;
-    }
+  #aboutprofile-post {
+    margin: 0 3rem;
+  }
 
-    #contact-message{
-        margin: 0 20rem 15rem 20rem;
-    }
+  #contact-message {
+    margin: 0 20rem 15rem 20rem;
+  }
 
-    .socials{
-        display: block;
-        padding: 1rem 0;
-    }
+  .socials {
+    display: block;
+    padding: 1rem 0;
+  }
 
-    .socials a{
-        opacity: 0.5;
-        transition: 0.3s;
-    }
+  .socials a {
+    opacity: 0.5;
+    transition: 0.3s;
+  }
 
-    .socials a:hover{
-        opacity: 1;
-    }
+  .socials a:hover {
+    opacity: 1;
+  }
 
-    .line-in-middle{
-        width:1px;
-        height:100px;
-        background-color: rgb(255, 255, 255);
-        position: relative;
-    }
+  .line-in-middle {
+    width: 1px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+  }
 
-    #contact-list, #email-list{
-        display: flex;
-        position: fixed;
-        bottom: 0%;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-
+  #contact-list,
+  #email-list {
+    display: flex;
+    position: fixed;
+    bottom: 0%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
 }

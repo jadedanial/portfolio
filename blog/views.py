@@ -4,80 +4,87 @@ from django.utils import timezone
 from .models import Skill, Social, Profile, Project, ProjectView, SessionIPUrlKey
 from django.db.models import F
 
+
 def home(request):
 
-	context = {
-		'skills': Skill.objects.all(),
-		'socials': Social.objects.all(),
-		'profiles': Profile.objects.all(),
-		'projects': Project.objects.all(),
-		'projectviews': ProjectView.objects.all(),
-	}
+    context = {
+        'skills': Skill.objects.all(),
+        'socials': Social.objects.all(),
+        'profiles': Profile.objects.all(),
+        'projects': Project.objects.all(),
+        'projectviews': ProjectView.objects.all(),
+    }
 
-	for project in Project.objects.all():
+    for project in Project.objects.all():
 
-		projectobject = ProjectView.objects.filter(project=project)
+        projectobject = ProjectView.objects.filter(project=project)
 
-		if projectobject:
+        if projectobject:
 
-			pass
+            pass
 
-		else:
+        else:
 
-			projectView = ProjectView.objects.create(project=project, view=0)
-			projectView.save()
+            projectView = ProjectView.objects.create(project=project, view=0)
+            projectView.save()
 
-	return render(request, 'blog/section.html', context)
+    return render(request, 'blog/section.html', context)
+
 
 def getSession(request):
 
-	if not request.session.session_key:
+    if not request.session.session_key:
 
-		request.session.save()
+        request.session.save()
 
-	session_id = request.session.session_key
-	return session_id
+    session_id = request.session.session_key
+    return session_id
+
 
 def getIP(request):
 
-	forwardedfor = request.META.get('HTTP_X_FORWARDED_FOR')
+    forwardedfor = request.META.get('HTTP_X_FORWARDED_FOR')
 
-	if forwardedfor:
+    if forwardedfor:
 
-		ip = forwardedfor.split(',')[0]
+        ip = forwardedfor.split(',')[0]
 
-	else:
+    else:
 
-		ip = request.META.get('REMOTE_ADDR')
+        ip = request.META.get('REMOTE_ADDR')
 
-	return ip
+    return ip
+
 
 def projectdetail(request, category, pk, slug):
 
-	SessionIPUrl = getSession(request) + getIP(request) + request.build_absolute_uri()
+    SessionIPUrl = getSession(request) + getIP(request) + \
+        request.build_absolute_uri()
 
-	project = get_object_or_404(Project, pk=pk)
+    project = get_object_or_404(Project, pk=pk)
 
-	if(SessionIPUrlKey.objects.filter(sessionipurlkey=SessionIPUrl).count() <= 0):
+    if (SessionIPUrlKey.objects.filter(sessionipurlkey=SessionIPUrl).count() <= 0):
 
-		Sessionipurlkey = SessionIPUrlKey.objects.create(sessionipurlkey=SessionIPUrl)
-		Sessionipurlkey.save()
+        Sessionipurlkey = SessionIPUrlKey.objects.create(
+            sessionipurlkey=SessionIPUrl)
+        Sessionipurlkey.save()
 
-		if(ProjectView.objects.filter(project=project).count() <= 0):
+        if (ProjectView.objects.filter(project=project).count() <= 0):
 
-			projectView = ProjectView.objects.create(project=project, view=1)
-			projectView.save()
+            projectView = ProjectView.objects.create(project=project, view=1)
+            projectView.save()
 
-		else:
+        else:
 
-			ProjectView.objects.filter(project=project).update(view=F('view') + 1)
+            ProjectView.objects.filter(
+                project=project).update(view=F('view') + 1)
 
-	context = {
-		'subject': project,
-		'profiles': Profile.objects.all(),
-		'views': ProjectView.objects.all(),
-		'allcontents': Project.objects.all().order_by('title'),
-		'category': category
-	}
+    context = {
+        'subject': project,
+        'profiles': Profile.objects.all(),
+        'views': ProjectView.objects.all(),
+        'allcontents': Project.objects.all().order_by('title'),
+        'category': category
+    }
 
-	return render(request, 'blog/post.html', context)
+    return render(request, 'blog/post.html', context)

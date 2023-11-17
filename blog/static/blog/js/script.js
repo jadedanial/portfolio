@@ -1,163 +1,119 @@
-function showMenu(){
-
-	document.getElementById("menuitems").classList.toggle("showmenu");
-
+function showMenu() {
+  document.getElementById("menuitems").classList.toggle("showmenu");
 }
 
-function loadFunctions(){
+function loadFunctions() {
+  //Start Function - Word Typing and Deleting Effects//
 
-	//Start Function - Word Typing and Deleting Effects//
-	
-	const words = ["Programmer", "Web Developer", "Human"];
-	let i = 0;
-	let timer;
+  const words = ["Programmer", "Web Developer", "Human"];
+  let i = 0;
+  let timer;
 
-	function typingEffect() {
+  function typingEffect() {
+    let word = words[i].split("");
 
-		let word = words[i].split("");
+    var loopTyping = function () {
+      if (word.length > 0) {
+        document.getElementById("word").innerHTML += word.shift();
+      } else {
+        deletingEffect();
+        return false;
+      }
 
-		var loopTyping = function() {
+      timer = setTimeout(loopTyping, 200);
+    };
 
-			if (word.length > 0) {
+    loopTyping();
+  }
 
-				document.getElementById('word').innerHTML += word.shift();
+  function deletingEffect() {
+    let word = words[i].split("");
 
-			} else {
+    var loopDeleting = function () {
+      if (word.length > 0) {
+        word.pop();
+        document.getElementById("word").innerHTML = word.join("");
+      } else {
+        if (words.length > i + 1) {
+          i++;
+        } else {
+          i = 0;
+        }
 
-				deletingEffect();
-				return false;
+        typingEffect();
+        return false;
+      }
 
-			};
+      timer = setTimeout(loopDeleting, 50);
+    };
 
-			timer = setTimeout(loopTyping, 200);
+    loopDeleting();
+  }
 
-		};
+  typingEffect();
 
-		loopTyping();
+  //End Function - Word Typing and Deleting Effects//
 
-	};
+  //Start Function - Hide Hamburger Menu//
 
-	function deletingEffect() {
+  window.onscroll = function () {
+    onScroll();
+  };
 
-		let word = words[i].split("");
+  window.onclick = function (event) {
+    if (!event.target.matches("#menuimg")) {
+      var dropdowns = document.getElementsByClassName("menucontent");
+      var i;
 
-		var loopDeleting = function() {
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
 
-			if (word.length > 0) {
+        if (openDropdown.classList.contains("showmenu")) {
+          openDropdown.classList.remove("showmenu");
+        }
+      }
+    }
+  };
 
-				word.pop();
-				document.getElementById('word').innerHTML = word.join("");
+  //End Function - Hide Hamburger Menu//
 
-			} else {
+  //Start Function - Hide Navigation Menu When Scroll Up//
 
-				if (words.length > (i + 1)) {
+  var prevScrollpos = window.pageYOffset;
 
-					i++;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
 
-				} else {
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navigation").style.top = "0";
+    } else {
+      document.getElementById("navigation").style.top = "-90px";
+    }
 
-					i = 0;
+    prevScrollpos = currentScrollPos;
+  };
 
-				};
-
-				typingEffect();
-				return false;
-
-			};
-
-			timer = setTimeout(loopDeleting, 50);
-
-		};
-
-		loopDeleting();
-
-	};
-
-	typingEffect();
-
-	//End Function - Word Typing and Deleting Effects//
-
-	//Start Function - Hide Hamburger Menu//
-	
-	window.onscroll = function() {onScroll()};
-
-	window.onclick = function(event){
-
-		if(!event.target.matches("#menuimg")){
-
-			var dropdowns = document.getElementsByClassName("menucontent");
-			var i;
-
-			for(i = 0; i < dropdowns.length; i++){
-
-				var openDropdown = dropdowns[i];
-
-				if(openDropdown.classList.contains("showmenu")){
-
-					openDropdown.classList.remove("showmenu");
-
-				}
-
-			}
-
-		}
-				
-	}
-	
-	//End Function - Hide Hamburger Menu//
-
-	//Start Function - Hide Navigation Menu When Scroll Up//
-
-	var prevScrollpos = window.pageYOffset;
-
-	window.onscroll = function(){
-
-		var currentScrollPos = window.pageYOffset;
-
-		if(prevScrollpos > currentScrollPos){
-
-			document.getElementById("navigation").style.top = "0";
-
-		}else{
-
-			document.getElementById("navigation").style.top = "-90px";
-
-		}
-
-		prevScrollpos = currentScrollPos;
-
-	}
-
-	//End Function - Hide Navigation Menu When Scroll Up//
-
+  //End Function - Hide Navigation Menu When Scroll Up//
 }
 
 //Start Function - Scroll Reveal Effects//
 
-function reveal(){
-	
-	var reveals = document.querySelectorAll(".reveal");
-  
-	for(var i = 0; i < reveals.length; i++){
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
 
-	  	var windowHeight = window.innerHeight;
-	  	var elementTop = reveals[i].getBoundingClientRect().top;
-	  	var elementVisible = 50;
-  
-		if(elementTop < windowHeight - elementVisible){
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 50;
 
-			reveals[i].classList.add("active");
-
-	  	}else{
-
-			reveals[i].classList.remove("active");
-
-		}
-
-	}
-
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
 }
-  
+
 window.addEventListener("scroll", reveal);
 
 //End Function - Scroll Reveal Effects//

@@ -1,76 +1,88 @@
-{% extends "index.html" %}
-{% load static %}
-{% block content %}
-	<!--------------------------- post section -->
-	{% block subject %}
-		<section id="postdetail" class="container reveal">
-			<div id="postdetailtitle">
-				<p>{{ subject.title }}</p>
-			</div>
-			<div class="postdetailpubinfo">
-				<span>
-					<img src="{% static 'blog/images/author.png' %}" alt="Author" width="15rem">
-					<p>{{ subject.author.user.first_name }} {{ subject.author.user.last_name }}</p>
-				</span>
-				<span>
-					<img src="{% static 'blog/images/calendar.png' %}" alt="Calendar" width="15rem">
-					<p>{{ subject.dateposted|date:"m d, Y g:s A" }}</p>
-				</span>
-				<span>
-					<img src="{% static 'blog/images/view.png' %}" alt="View" width="17rem">
-					{% if category == 1 %}
-						{% for view in views %}
-							{% if view.project.id == subject.id %}
-								{% if view.view > 1 %}
-									<p>{{ view.view }} views</p>
-								{% else%}
-									<p>{{ view.view }} view</p>
-								{% endif %}
-							{% endif %}
-						{% endfor %}
-					{% endif %}
-				</span>
-			</div>
-			<div id="postdetailcontents">
-				<div id="postdetailbody">
-					<div id="postdetailcontent" class="container reveal">
-						<p>{{ subject.longcontent|safe }}</p>
-					</div>
-					<br><br>
-				</div>
-				<div>
-					{% block profile %}
-						{% for profile in profiles %}
-							{% if profile.user.username == "jadedanial" %}
-								<div id="aboutprofile-post" class="container reveal">
-									<div class="card-container">
-										<img class="round" src="{% static 'blog/media/user/' %}{{ profile.imagename }}" alt="{{ profile.user.first_name }}" id="profileimg">
-										<h3>{{ profile.user.first_name }} {{ profile.user.last_name }}</h3>
-										<h6>Philippines</h6>
-										<p>Programmer/Web Developer</p>
-										<div class="card-skills">
-											<h6>Skills</h6>
-											<ul>
-												{% for skill in profile.skill.all %}
-													<li><img src="{% static 'blog/media/skill/' %}{{ skill.imagename }}" alt="{{ skill.name }}" class="skillimg"></li>
-												{% endfor %}
-											</ul>
-										</div>
-									</div>
-								</div>
-							{% endif %}
-						{% endfor %}
-					{% endblock profile %}
-					<div id="postdetaillist" class="container reveal">
-						{% if category == 1%}
-							<p>projects</p>
-							{% for content in allcontents %}
-								<a href="{% url 'project' category=category pk=content.pk slug=subject.slug %}"><span>{{ content.title }}</span></a>
-							{% endfor %}
-						{% endif %}
-					</div>
-				</div>
-			</div>
-		</section>
-	{% endblock subject %}
-{% endblock %}
+{% extends "index.html" %} {% load static %} {% block content %}
+<!--------------------------- post section -->
+{% block subject %}
+<section id="postdetail" class="container reveal">
+  <div id="postdetailtitle">
+    <p>{{ subject.title }}</p>
+  </div>
+  <div class="postdetailpubinfo">
+    <span>
+      <img
+        src="{% static 'blog/images/author.png' %}"
+        alt="Author"
+        width="15rem"
+      />
+      <p>
+        {{ subject.author.user.first_name }} {{ subject.author.user.last_name }}
+      </p>
+    </span>
+    <span>
+      <img
+        src="{% static 'blog/images/calendar.png' %}"
+        alt="Calendar"
+        width="15rem"
+      />
+      <p>{{ subject.dateposted|date:"m d, Y g:s A" }}</p>
+    </span>
+    <span>
+      <img src="{% static 'blog/images/view.png' %}" alt="View" width="17rem" />
+      {% if category == 1 %} {% for view in views %} {% if view.project.id ==
+      subject.id %} {% if view.view > 1 %}
+      <p>{{ view.view }} views</p>
+      {% else%}
+      <p>{{ view.view }} view</p>
+      {% endif %} {% endif %} {% endfor %} {% endif %}
+    </span>
+  </div>
+  <div id="postdetailcontents">
+    <div id="postdetailbody">
+      <div id="postdetailcontent" class="container reveal">
+        <p>{{ subject.longcontent|safe }}</p>
+      </div>
+      <br /><br />
+    </div>
+    <div>
+      {% block profile %} {% for profile in profiles %} {% if
+      profile.user.username == "jadedanial" %}
+      <div id="aboutprofile-post" class="container reveal">
+        <div class="card-container">
+          <img
+            class="round"
+            src="{% static 'blog/media/user/' %}{{ profile.imagename }}"
+            alt="{{ profile.user.first_name }}"
+            id="profileimg"
+          />
+          <h3>{{ profile.user.first_name }} {{ profile.user.last_name }}</h3>
+          <h6>Philippines</h6>
+          <p>Programmer/Web Developer</p>
+          <div class="card-skills">
+            <h6>Skills</h6>
+            <ul>
+              {% for skill in profile.skill.all %}
+              <li>
+                <img
+                  src="{% static 'blog/media/skill/' %}{{ skill.imagename }}"
+                  alt="{{ skill.name }}"
+                  class="skillimg"
+                />
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endif %} {% endfor %} {% endblock profile %}
+      <div id="postdetaillist" class="container reveal">
+        {% if category == 1%}
+        <p>projects</p>
+        {% for content in allcontents %}
+        <a
+          href="{% url 'project' category=category pk=content.pk slug=subject.slug %}"
+          ><span>{{ content.title }}</span></a
+        >
+        {% endfor %} {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock subject %} {% endblock %}
